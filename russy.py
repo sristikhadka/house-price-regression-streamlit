@@ -8,7 +8,7 @@ from sklearn.neighbors import KNeighborsRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import GridSearchCV
 
-from sklearn.metrics import r2_score,mean_absolute_error,mean_squared_error
+from sklearn.metrics import r2_score
 
 
 df = pd.read_csv("house_price_regression_dataset.csv")
@@ -125,5 +125,6 @@ input_data = [[sqft,bed,bath,ls,gs,neigh]]
 if st.sidebar.button('Predict Price'):
     prediction = best_model.predict(input_data)
     st.success(f"Estimated House Price: ${prediction[0]:,.2f}")
+
 
 

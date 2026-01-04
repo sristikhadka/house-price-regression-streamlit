@@ -10,7 +10,7 @@ from sklearn.metrics import r2_score
 import matplotlib.pyplot as plt
 import joblib
 
-df = pd.read_csv(r"C:\Users\Admin\Downloads\archive (4)\house_price_regression_dataset.csv")
+df = pd.read_csv("house_price_regression_dataset.csv")
 print(df.head())
 
 
@@ -51,11 +51,12 @@ plt.grid(True)
 for i,v in enumerate(results.values()):
     plt.text(i,v,f"{v:.3f}",ha = 'center',va = 'bottom')
     
-plt.savefig(r'c:\Users\Admin\Desktop\r2square.png',dpi = 150)
+plt.savefig('r2square.png',dpi = 150)
 # plt.show()
     
 
 
 
 joblib.dump(models['LR'],'House_price_model.pkl')
+
 print('Model saved successfully')

@@ -5,7 +5,7 @@ import seaborn as sns
 import joblib
 
 
-df = pd.read_csv(r"C:\Users\Admin\Downloads\archive (4)\house_price_regression_dataset.csv")
+df = pd.read_csv("house_price_regression_dataset.csv")
 # print(df.head())
 # print(df.describe())
 st.header('House Price Regression')
@@ -73,7 +73,7 @@ ax3.set_title('Feature Corelation Heatmap')
 st.pyplot(fig3)
 
 st.subheader('Model R2 score comparison')
-st.image(r'c:\Users\Admin\Desktop\r2square.png',use_container_width= True)
+st.image('r2square.png',use_container_width= True)
 
 
 st.sidebar.header("Enter House Details")
@@ -92,4 +92,5 @@ input_data = [[sqft,bed,bath,ls,gs,neigh]]
 if st.sidebar.button('Predict Price'):
     prediction = model.predict(input_data)
     st.success(f"Estimated House Price: ${prediction[0]:,.2f}")
+
 
